@@ -11,6 +11,14 @@
             <li class="active">
               <%= link_to("Product", products_path) %>
             </li>
+            <li class="navbar-form navbar-left" >
+              <%= search_form_for @q do |f| %>
+              <%= f.label :product_name %>
+              <%= f.search_field :title_cont %>
+              <%= f.submit %>
+              <% end %>
+            </li>
+
           </ul>
             <ul class="nav navbar-nav navbar-right">
               <li>
