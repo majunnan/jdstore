@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
     end
+    member do
+      put "like", to: "products#upvote"
+    end
   end
 
   resources :carts do
