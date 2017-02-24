@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     @q = Product.ransack(params[:q])
     @products = @q.result(distinct: true)
   end
+  
 
   def show
     @product = Product.find(params[:id])

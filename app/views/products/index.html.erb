@@ -11,5 +11,12 @@
         <%= product.title %> ¥ <%= product.price %>
     </div>
   <% end %>
-  
+  <li class="navbar-form navbar-left" >
+    <%= search_form_for @q do |f| %>
+    <%= f.label :商品名称 %>
+    <%= f.search_field :title_cont %>
+    <%= f.submit %>
+    <% end %>
+  </li>
+
 </div>
