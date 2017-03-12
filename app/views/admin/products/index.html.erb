@@ -10,6 +10,7 @@
       <th>Name</th>
       <th>Price</th>
       <th width="100"> Options</th>
+      <th width="100"> Destroy</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +35,10 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-xs btn-info") %> <!-- "btn btn-xs btn-info"为bootstrap语法 -->
+        </td>
+        <td>
+          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?"}) %>
         </td>
       </tr>
     <% end %>
